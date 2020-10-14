@@ -11,7 +11,7 @@ set(STATIC_LIBS "${OpenCV_DIR}/staticlibs/${ANDROID_ABI}")
 
 file(GLOB STUFF RELATIVE ${STATIC_LIBS} ${STATIC_LIBS}/*.a)
 
-message(WARNING "${STUFF}")
+message(STATUS "OpenCV libs: ${STUFF}")
 
 foreach(lib ${STUFF})
     add_library( ${lib} STATIC IMPORTED )
@@ -23,7 +23,7 @@ set(STATIC_LIBS_OTHER "${OpenCV_DIR}/3rdparty/libs/${ANDROID_ABI}")
 
 file(GLOB STUFF_OTHER RELATIVE ${STATIC_LIBS_OTHER} ${STATIC_LIBS_OTHER}/*.a)
 
-message(WARNING "${STUFF_OTHER}")
+message(STATUS "3rd party libs: ${STUFF_OTHER}")
 
 foreach(lib_other ${STUFF_OTHER})
     add_library( ${lib_other} STATIC IMPORTED )
