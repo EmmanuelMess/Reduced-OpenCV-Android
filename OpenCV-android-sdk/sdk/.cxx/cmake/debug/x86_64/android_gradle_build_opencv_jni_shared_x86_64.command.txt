@@ -1,7 +1,0 @@
-Executable : /home/emmanuel/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
-arguments : 
--C
-/home/emmanuel/Documentos/temp/OpenCVstatictest2/OpenCV-android-sdk/sdk/.cxx/cmake/debug/x86_64
-opencv_jni_shared
-jvmArgs : 
-
