@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Mat;
+
 public class MainActivity extends AppCompatActivity {
 
 	// Used to load the 'native-lib' library on application startup.
 	static {
 		System.loadLibrary("native-lib");
+		OpenCVLoader.initDebug();
 	}
 
 	@Override
@@ -20,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
 		// Example of a call to a native method
 		TextView tv = findViewById(R.id.sample_text);
 		tv.setText(stringFromJNI());
+
+		Mat a = new Mat();
+
+		tv.setText(a.nativeObj + "");
 	}
 
 	/**

@@ -134,7 +134,7 @@ android {
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ['native/libs']
+            jniLibs.srcDirs = ['native/staticlibs', 'native/3rdparty/libs']
             java.srcDirs = ['java/src']
             aidl.srcDirs = ['java/src']
             res.srcDirs = ['java/res']
