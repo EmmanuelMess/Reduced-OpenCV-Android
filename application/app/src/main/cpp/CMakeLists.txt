@@ -11,6 +11,8 @@ set(STATIC_LIBS "${OpenCV_DIR}/staticlibs/${ANDROID_ABI}")
 
 file(GLOB STUFF RELATIVE ${STATIC_LIBS} ${STATIC_LIBS}/*.a)
 
+message(WARNING "${STUFF}")
+
 foreach(lib ${STUFF})
     add_library( ${lib} STATIC IMPORTED )
     set_target_properties(${lib} PROPERTIES IMPORTED_LOCATION ${STATIC_LIBS}/${lib})
@@ -21,8 +23,9 @@ set(STATIC_LIBS_OTHER "${OpenCV_DIR}/3rdparty/libs/${ANDROID_ABI}")
 
 file(GLOB STUFF_OTHER RELATIVE ${STATIC_LIBS_OTHER} ${STATIC_LIBS_OTHER}/*.a)
 
+message(WARNING "${STUFF_OTHER}")
+
 foreach(lib_other ${STUFF_OTHER})
-    message(WARNING "${lib_other}")
     add_library( ${lib_other} STATIC IMPORTED )
     set_target_properties(${lib_other} PROPERTIES IMPORTED_LOCATION ${STATIC_LIBS_OTHER}/${lib_other})
 endforeach()
@@ -41,5 +44,6 @@ target_link_libraries(
         native-lib
         ${STUFF}
         ${STUFF_OTHER}
+        z
         ${log-lib}
 )
