@@ -1,0 +1,2 @@
+ninja: Entering directory `/home/emmanuel/Documentos/temp/OpenCVstatictest2/OpenCV-android-sdk/sdk/.cxx/cmake/debug/x86_64'
+ninja: no work to do.

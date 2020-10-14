@@ -1,0 +1,3 @@
+/home/emmanuel/Documentos/temp/OpenCVstatictest2/OpenCV-android-sdk/sdk/.cxx/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir
+/home/emmanuel/Documentos/temp/OpenCVstatictest2/OpenCV-android-sdk/sdk/.cxx/cmake/debug/x86_64/CMakeFiles/edit_cache.dir
+/home/emmanuel/Documentos/temp/OpenCVstatictest2/OpenCV-android-sdk/sdk/.cxx/cmake/debug/x86_64/CMakeFiles/opencv_jni_shared.dir
