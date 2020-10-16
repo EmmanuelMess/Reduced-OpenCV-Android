@@ -32,7 +32,7 @@ endforeach()
 
 
 
-add_library( native-lib SHARED native-lib.cpp)
+add_library( native-lib SHARED native-lib.cpp find-cut-squares.cpp find-cut-squares.hpp)
 
 find_library(
         log-lib

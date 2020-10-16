@@ -1,19 +1,17 @@
 package com.emmanuelmess.opencvstatictest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.ImageView;
 
-import org.opencv.android.OpenCVLoader;
-import org.opencv.core.Mat;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
 	// Used to load the 'native-lib' library on application startup.
 	static {
 		System.loadLibrary("native-lib");
-		OpenCVLoader.initDebug();
 	}
 
 	@Override
@@ -21,18 +19,12 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		// Example of a call to a native method
-		TextView tv = findViewById(R.id.sample_text);
-		tv.setText(stringFromJNI());
+		Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.test);
 
-		Mat a = new Mat();
+		Bitmap bmp32 = image.copy(Bitmap.Config.ARGB_8888, true);
 
-		tv.setText(a.nativeObj + "");
+		this.<ImageView>findViewById(R.id.background).setImageBitmap(process(bmp32));
 	}
 
-	/**
-	 * A native method that is implemented by the 'native-lib' native library,
-	 * which is packaged with this application.
-	 */
-	public native String stringFromJNI();
+	private native Bitmap process(Bitmap b);
 }
