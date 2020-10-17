@@ -17,7 +17,7 @@ android {
                 cppFlags "-std=c++17 -frtti -fexceptions"
                 abiFilters 'armeabi-v7a', 'arm64-v8a' //, 'x86', 'x86_64'
                 arguments.addAll ([
-                        "-DOpenCV_DIR=" + opencvsdk + "/sdk/native"
+                        "-DOpenCV_DIR=" + opencvsdktemp1 + "/sdk/native"
                 ])
 
             }
